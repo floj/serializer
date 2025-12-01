@@ -7,6 +7,7 @@ class Session < ActiveRecord::Base
 
   def default_values
     self.completed_to ||= Time.at(0)
+    self.sources ||= []
   end
 
   def log(time)
