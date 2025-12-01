@@ -13,6 +13,8 @@ services:
       POSTGRES_PASSWORD: postgres
       # DATABASE_URL not used in development (database.yml uses name); kept for consistency
       DATABASE_URL: postgres://postgres:postgres@db:5432/serializer
+      RAILS_LOG_TO_STDOUT: 1
+      RAILS_SERVE_STATIC_FILES: 1
     command: bundle exec rails server -b 0.0.0.0 -p 3000
     ports:
       - "3000:3000"

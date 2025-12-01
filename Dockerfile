@@ -11,6 +11,8 @@ ADD Gemfile* ./
 RUN bundle install
 
 COPY . .
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 RUN RAILS_ENV=production \
      SECRET_KEY_BASE=1 \
@@ -19,6 +21,6 @@ RUN RAILS_ENV=production \
 
 ENV RAILS_ENV=production
 
-ENTRYPOINT ["bundle", "exec"]
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
-CMD ["rails", "server"]
+CMD ["bundle", "exec", "rails", "server"]
