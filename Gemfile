@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.7.1"
+ruby "3.4.7"
 
 gem "feedjira"
 gem "gruff"
@@ -10,18 +10,15 @@ gem "nokogiri"
 gem "open_uri_redirections"
 gem "pg"
 gem "prometheus-client"
-gem "rails"
+gem "rails", "~> 7.2"
+gem "puma"
 gem "random_username"
 gem "rufus-scheduler"
-gem "sass-rails"
+gem "sassc-rails"
 gem "slim"
-gem "uglifier"
+gem "terser"
 gem "rake"
 gem "bootsnap"
-
-group :production do
-  gem "rails_12factor"
-end
 
 group :development, :test do
   gem "pry"
