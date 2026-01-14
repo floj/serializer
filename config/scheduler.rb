@@ -18,18 +18,22 @@ if ENV["ENABLE_SCHEDULER"].present?
   end
 
   scheduler.every collect_interval, overlap: false do
+    Rails.logger.info "Invoking collect_active task"
     invoke_reenable("collect_active")
   end
 
   scheduler.every collect_interval, overlap: false do
+    Rails.logger.info "Invoking collect_feeds task"
     invoke_reenable("collect_feeds")
   end
 
   scheduler.every clean_interval, overlap: false do
+    Rails.logger.info "Invoking clean_old_data task"
     invoke_reenable("clean_old_data")
   end
 
   scheduler.every graph_interval, overlap: false do
+    Rails.logger.info "Invoking save_graph task"
     invoke_reenable("save_graph")
   end
 
