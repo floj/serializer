@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.4.7"
+ruby file: ".ruby-version"
 
 gem "feedjira"
 gem "gruff"
@@ -14,6 +14,7 @@ gem "rails", "~> 7.2"
 gem "puma"
 gem "random_username"
 gem "rufus-scheduler"
+gem "puma-rufus-scheduler"
 gem "sassc-rails"
 gem "slim"
 gem "terser"
@@ -25,6 +26,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "standard"
   gem "capybara"
   gem "factory_bot_rails"
   gem "guard"

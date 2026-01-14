@@ -7,7 +7,7 @@ RUN bundle config set without 'development test'
 
 WORKDIR /app
 
-ADD Gemfile* ./
+ADD Gemfile* .ruby-version ./
 RUN bundle install
 
 COPY . .
