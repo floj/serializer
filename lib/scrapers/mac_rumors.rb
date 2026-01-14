@@ -11,7 +11,7 @@ module MacRumors
   class MacRumorsScraper
     include Utilities
     def initialize
-      @url = 'http://feeds.macrumors.com/MacRumors-Front'
+      @url = 'https://feeds.macrumors.com/MacRumors-Front'
     end
 
     def items
